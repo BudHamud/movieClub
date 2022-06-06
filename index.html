@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MovieClub</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="img/ico.png" type="image/x-icon">
+</head>
+<body>
+  <header>
+    <h1><a href="#">MovieClub</a></h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Movies</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="home">
+      <div class="div2">
+        <h3>Herramienta para agregar y mostrar películas</h3>
+        <section class="input"> 
+          <p>Nombre de la pelicula:</p>
+          <input type="text" name="input1" id="">
+          <p>Descripción:</p>
+          <textarea name="input2" id="" cols="30" rows="10"></textarea>
+          <p>Actores:</p>
+          <textarea name="input3" id="" cols="30" rows="10"></textarea>
+          <div><button onclick="mostrar()" id="btn">Agregar</button></div>
+          
+        </section>
+      </div>
+    </section>
+    <article class="movies">
+    </article>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

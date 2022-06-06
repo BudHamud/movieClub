@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+* {
+    margin: 0;
+    color: #DBCBBD;
+    font-family: 'Merriweather';
+}
+header {
+    width: 100%;
+    background-color: #87431D;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+ul {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    gap: 10px
+}
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+}
+li {
+    list-style: none;
+}
+main {
+    background-color: #290001;
+    width: 100%;
+}
+.home {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    line-height: 2.2;
+}
+.home input, textarea {
+    background-color: black;
+    width: 250px;
+    border: solid #DBCBBD 1.5px;
+}
+article {
+    background-color: #87431D;
+    display: flex;
+    gap: 20px;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+button {
+    background-color: #C87941;
+    font-weight: bolder;
+    padding: 10px;
+}
+.pelis {
+    margin: 20px;
+    width: 350px;
+    background-color: black;
+    color: white;
+    display: flex;
+}
+.pelis p {
+    margin-top: 15px;
+}
+.pelis img {
+    width: 150px;
+    height: 220px;
+}
+.pelis div {
+    margin: 0 5px;
+}
+.borrar {
+    display: none;
+}
+@media (max-width: 425px) {
+    ul {
+        flex-direction: column;
+    }
+    .pelis {
+        width: 100%;
+        margin: 0;
+    }
+}
