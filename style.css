@@ -15,7 +15,8 @@ ul {
     display: flex;
     justify-content: center;
     padding: 20px;
-    gap: 10px
+    gap: 10px;
+    align-items: center;
 }
 a {
     text-decoration: none;
@@ -72,6 +73,10 @@ button {
 }
 .borrar {
     display: none;
+}
+.black {
+    background-color: black;
+    color: black;
 }
 @media (max-width: 425px) {
     ul {
