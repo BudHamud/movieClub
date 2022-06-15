@@ -78,6 +78,17 @@ button {
     background-color: black;
     color: black;
 }
+.modal {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #87431D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 @media (max-width: 425px) {
     ul {
         flex-direction: column;
