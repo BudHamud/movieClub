@@ -6,6 +6,8 @@ let btn = document.getElementsByClassName("btn")
 let modo = null
 let modal = document.getElementById("modal");
 let count = 4
+let ini = document.getElementById("ini")
+let reg = document.getElementById("reg")
 
 class Movie  {
     constructor(nombre, descripcion, actores, id ) {
@@ -108,6 +110,13 @@ cerrarModal = () => {
     modal.classList.remove("modal")
 }
 
+bienvenida = () => {
+    alert("Bienvenido")
+    reg.style.display = "none"
+    ini.style.display = "none"
+    cerrarModal()
+}
+
 crearUsuario = () => {
     modal.classList.add("modal")
     modal.innerHTML = `<div class="modal-container"><div class="modal-header"><h2>Crear Usuario</h2></div><div class="modal-body"><div><label for="nombre">Nombre</label><input type="text" id="nombre" placeholder="Nombre"></div><div><label for="edad">Edad</label><input type="number" id="edad" placeholder="Edad"></div><div><label for="email">Email</label><input type="email" id="email" placeholder="Email"></div><div><label for="contraseña">Constraseña</label><input type="password" id="password" placeholder="Contraseña"></div></div><div class="modal-footer"><button type="button" onclick="crearUsuario2()">Crear</button><button type="button" onclick="cerrarModal()">Cerrar</button></div></div>`
@@ -132,10 +141,5 @@ iniciarSesion2 = () => {
     let email = document.querySelector("#email").value
     let password = document.querySelector("#password").value
     let usuario = JSON.parse(localStorage.getItem('usuario'))
-    if (usuario.email === email && usuario.password === password) {
-        cerrarModal()
-        alert("Bienvenido " + usuario.nombre)
-    } else {
-        alert("Email o contraseña incorrectos")
-    }
+    usuario.email === email & usuario.password === password ? bienvenida() : alert("Email o contraseña incorrectos")
 }
