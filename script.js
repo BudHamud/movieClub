@@ -111,9 +111,13 @@ cerrarModal = () => {
 }
 
 bienvenida = () => {
-    alert("Bienvenido")
     reg.style.display = "none"
     ini.style.display = "none"
+    Swal.fire(
+        'Hola!',
+        'Te damos la Bienvenida',
+        'success'
+    )
     cerrarModal()
 }
 
@@ -129,6 +133,11 @@ crearUsuario2 = () => {
     let password = document.querySelector("#password").value
     let usuario = new Usuario(nombre, edad, email, password)
     localStorage.setItem('usuario', JSON.stringify(usuario))
+    Swal.fire(
+        'Excelente!',
+        'Usuario creado con éxito',
+        'success'
+    )
     cerrarModal()
 }
 
@@ -141,5 +150,21 @@ iniciarSesion2 = () => {
     let email = document.querySelector("#email").value
     let password = document.querySelector("#password").value
     let usuario = JSON.parse(localStorage.getItem('usuario'))
-    usuario.email === email & usuario.password === password ? bienvenida() : alert("Email o contraseña incorrectos")
+    if (usuario.email === email && usuario.password === password) {
+        bienvenida()
+    } else {
+        Swal.fire(
+            'Error',
+            'Email o contraseña incorrecto',
+            'error'
+          )
+    }
+}
+
+aver = () => {
+    Swal.fire(
+        'Good job!',
+        'You clicked the button!',
+        'success'
+      )
 }
