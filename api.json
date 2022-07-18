@@ -1,0 +1,26 @@
+[
+  {
+    "nombre": "muere monstruo muere",
+    "descripcion": "una pelicula malisima, asi que la voy a usar de relleno",
+    "actores": "Tania Casciani",
+    "id": 0
+  },
+  {
+    "nombre": "Club de la Pelea",
+    "descripcion": "Un chabón re aburrido se encuentra con uno re divertido y hacen unas re locuras, entre ellas, crear un club",
+    "actores": "Brad Pitt",
+    "id": 1
+  },
+  {
+    "nombre": "Flubber",
+    "descripcion": "El cientifico se saca un moco y se arma alto quilombo",
+    "actores": "Robin Williams",
+    "id": 2
+  },
+  {
+    "nombre": "Soy Leyenda",
+    "descripcion": "Will quedo solo y le habla a maniquíes. El chabón se encuentra con una mujer que le dice que es una leyenda",
+    "actores": "Will Smith",
+    "id": 3
+  }
+]

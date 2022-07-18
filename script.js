@@ -20,7 +20,7 @@ class Movie  {
 
 const mwm = new Movie("muere monstruo muere", "una pelicula malisima, asi que la voy a usar de relleno", "Tania Casciani", 0)
 const fightClub = new Movie("Club de la Pelea", "Un chabón re aburrido se encuentra con uno re divertido y hacen unas re locuras, entre ellas, crear un club", "Brad Pitt", 1);
-const groundhogDay = new Movie("El Dia de la Marmota", "Se repite el mismo dia, precisamente el día de la marmota como indica el título de la película", "Phill Murray", 2);
+const groundhogDay = new Movie("Flubber", "El cientifico se saca un moco y se arma alto quilombo", "Robin Williams", 2);
 const iAmLegend = new Movie("Soy Leyenda", "Will quedo solo y le habla a maniquíes. El chabón se encuentra con una mujer que le dice que es una leyenda", "Will Smith", 3);
 
 const pelis = [mwm, fightClub, groundhogDay, iAmLegend];
@@ -66,17 +66,29 @@ if (localStorage.getItem('darkMode') === null) {
     localStorage.setItem('darkMode', false)
 }
 
+btn[0].addEventListener("click", cambiarEstado)
+
 function revisarEstado() {
     if (localStorage.getItem('darkMode') === "true") {
         modo = true
         document.querySelector("header").classList.add("black")
         document.querySelector("main").classList.add("black")
         document.querySelector("article").classList.add("black")
+        document.querySelector('.btn').innerHTML = `<i class="fa-solid fa-sun"></i>`
+        document.querySelector('.btn').classList.add("light")
+        document.querySelector('.btn').classList.remove("dark")
+        document.querySelectorAll("button").forEach((a) =>  a.classList.add("light"))
+        document.querySelectorAll("button").forEach((a) =>  a.classList.remove("dark"))
     } else {
         modo = false
         document.querySelector("header").classList.remove("black")
         document.querySelector("main").classList.remove("black")
         document.querySelector("article").classList.remove("black")
+        document.querySelector('.btn').innerHTML = `<i class="fa-solid fa-moon"></i>`
+        document.querySelector('.btn').classList.add("dark")
+        document.querySelector('.btn').classList.remove("light")
+        document.querySelectorAll("button").forEach((a) =>  a.classList.add("hdark"))
+        document.querySelectorAll("button").forEach((a) =>  a.classList.remove("hlight"))
     }
 }
 
@@ -86,13 +98,25 @@ function cambiarEstado() {
     if (localStorage.getItem('darkMode') === "true") {
         localStorage.setItem('darkMode', "false")
         document.querySelector("header").classList.remove("black")
+        document.querySelector("a").classList.remove("black")
         document.querySelector("main").classList.remove("black")
         document.querySelector("article").classList.remove("black")
+        document.querySelector('.btn').innerHTML = `<i class="fa-solid fa-moon"></i>`
+        document.querySelectorAll("button").forEach((a) =>  a.classList.add("dark"))
+        document.querySelectorAll("button").forEach((a) =>  a.classList.remove("light"))
+        document.querySelectorAll(".pelis").forEach((a) =>  a.classList.add("dark"))
+        document.querySelectorAll(".pelis").forEach((a) =>  a.classList.remove("light"))
     } else {
         localStorage.setItem('darkMode', "true")
         document.querySelector("header").classList.add("black")
+        document.querySelector("a").classList.add("black")
         document.querySelector("main").classList.add("black")
         document.querySelector("article").classList.add("black")
+        document.querySelector('.btn').innerHTML = `<i class="fa-solid fa-sun"></i>`
+        document.querySelectorAll("button").forEach((a) =>  a.classList.add("light"))
+        document.querySelectorAll("button").forEach((a) =>  a.classList.remove("dark"))
+        document.querySelectorAll(".pelis").forEach((a) =>  a.classList.add("light"))
+        document.querySelectorAll(".pelis").forEach((a) =>  a.classList.remove("dark"))
     }
 }
 
@@ -110,20 +134,9 @@ cerrarModal = () => {
     modal.classList.remove("modal")
 }
 
-bienvenida = () => {
-    reg.style.display = "none"
-    ini.style.display = "none"
-    Swal.fire(
-        'Hola!',
-        'Te damos la Bienvenida',
-        'success'
-    )
-    cerrarModal()
-}
-
 crearUsuario = () => {
     modal.classList.add("modal")
-    modal.innerHTML = `<div class="modal-container"><div class="modal-header"><h2>Crear Usuario</h2></div><div class="modal-body"><div><label for="nombre">Nombre</label><input type="text" id="nombre" placeholder="Nombre"></div><div><label for="edad">Edad</label><input type="number" id="edad" placeholder="Edad"></div><div><label for="email">Email</label><input type="email" id="email" placeholder="Email"></div><div><label for="contraseña">Constraseña</label><input type="password" id="password" placeholder="Contraseña"></div></div><div class="modal-footer"><button type="button" onclick="crearUsuario2()">Crear</button><button type="button" onclick="cerrarModal()">Cerrar</button></div></div>`
+    modal.innerHTML = `<div class="modal-container"><div class="modal-header"><h2>Crear Usuario</h2></div><div class="modal-body"><div><label for="nombre"><p>Nombre:</p></label><input type="text" id="nombre" placeholder="Nombre"></div><div><label for="edad"><p>Edad:</p></label><input type="number" id="edad" placeholder="Edad"></div><div><label for="email"><p>Email:</p></label><input type="email" id="email" placeholder="Email"></div><div><label for="contraseña"><p>Contraseña:</p></label><input type="password" id="password" placeholder="Contraseña"></div></div><div class="modal-footer"><button type="button" onclick="crearUsuario2()">Crear</button><button type="button" onclick="cerrarModal()">Cerrar</button></div></div>`
 }
     
 crearUsuario2 = () => {
@@ -133,17 +146,28 @@ crearUsuario2 = () => {
     let password = document.querySelector("#password").value
     let usuario = new Usuario(nombre, edad, email, password)
     localStorage.setItem('usuario', JSON.stringify(usuario))
-    Swal.fire(
-        'Excelente!',
-        'Usuario creado con éxito',
-        'success'
-    )
     cerrarModal()
 }
 
 iniciarSesion = () => {
     modal.classList.add("modal")
-    modal.innerHTML = `<div class="modal-container"><div class="modal-header"><h2>Iniciar Sesión</h2></div><div class="modal-body"><div><label for="email">Email</label><input type="email" id="email" placeholder="Email"></div><div><label for="contraseña">Contraseña</label><input type="password" id="password" placeholder="Contraseña"></div></div><div class="modal-footer"><button type="button" onclick="iniciarSesion2()">Iniciar</button><button type="button" onclick="cerrarModal()">Cerrar</button></div></div>`
+    modal.innerHTML = `<div class="modal-container"><div class="modal-header"><h2>Iniciar Sesión</h2></div><div class="modal-body"><div><label for="email"><p>Email:</p></label><input type="email" id="email" placeholder="Email"></div><div><label for="contraseña"><p>Contraseña:</p></label><input type="password" id="password" placeholder="Contraseña"></div></div><div class="modal-footer"><button type="button" onclick="iniciarSesion2()">Iniciar</button><button type="button" onclick="cerrarModal()">Cerrar</button></div></div>`
+}
+
+borrarBotones = () => {
+    ini.classList.add("borrar")
+    creo.classList.add("borrar")
+}
+
+bienvenida = () => {
+    reg.style.display = "none"
+    ini.style.display = "none"
+    Swal.fire(
+        'Hola!',
+        'Te damos la Bienvenida',
+        'success'
+    )
+    cerrarModal()
 }
 
 iniciarSesion2 = () => {
@@ -161,10 +185,6 @@ iniciarSesion2 = () => {
     }
 }
 
-aver = () => {
-    Swal.fire(
-        'Good job!',
-        'You clicked the button!',
-        'success'
-      )
-}
+fetch('api.json')
+.then(resp => resp.json())
+.then(info => console.log(info))

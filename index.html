@@ -7,6 +7,10 @@
     <title>MovieClub</title>
     <link rel="stylesheet" href="style.css">
     <link rel="shortcut icon" href="img/ico.png" type="image/x-icon">
+    <script
+      src="https://kit.fontawesome.com/d6cbf412fd.js"
+      crossorigin="anonymous"
+    ></script>
 </head>
 <body>
   <header>
@@ -16,9 +20,9 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Movies</a></li>
-        <button onclick="cambiarEstado()" class="btn">DarkMode</button>
         <button id="reg" onclick="crearUsuario()">Registrarse</button>
         <button id="ini" onclick="iniciarSesion()">Iniciar Sesion</button>
+        <button class="btn">DarkMode</button>
       </ul>
     </nav>
   </header>
@@ -41,8 +45,7 @@
     <article class="movies">
     </article>
   </main>
-
-  <script src="script.js"></script>
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="script.js"></script>
 </body>
 </html>

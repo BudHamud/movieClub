@@ -1,12 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
 * {
     margin: 0;
-    color: #DBCBBD;
     font-family: 'Merriweather';
 }
 header {
     width: 100%;
-    background-color: #87431D;
+    background-color: #F2D7D9;
     display: flex;
     align-items: center;
     justify-content: space-around;
@@ -27,8 +26,21 @@ a:hover {
 li {
     list-style: none;
 }
+.btn {
+    border-radius: 20px;
+}
+.dark {
+    background-color: lightblue;
+}
+.light {
+    background-color: #748DA6;
+}
+
+button, .btn {
+    border: none; 
+}
 main {
-    background-color: #290001;
+    background-color: #D3CEDF;
     width: 100%;
 }
 .home {
@@ -43,21 +55,21 @@ main {
     border: solid #DBCBBD 1.5px;
 }
 article {
-    background-color: #87431D;
+    background-color: #F2D7D9;
     display: flex;
     gap: 20px;
     flex-flow: row wrap;
     justify-content: center;
 }
 button {
-    background-color: #C87941;
+    background-color: #748DA6;
     font-weight: bolder;
     padding: 10px;
 }
 .pelis {
     margin: 20px;
     width: 350px;
-    background-color: black;
+    background-color: #9CB4CC;
     color: white;
     display: flex;
 }
@@ -80,14 +92,25 @@ button {
 }
 .modal {
     position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background-color: #87431D;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background-color: lightgray;
+    border: 2px solid;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.modal-container {
+    text-align: center;
+}
+.modal-container input, button {
+    margin: 0 0 20px 10px;
+}
+.modal-container h2 {
+    margin: 0 0 20px 0;
+}
+.black {
+    background-color: black;
+    color: white; 
 }
 @media (max-width: 425px) {
     ul {
