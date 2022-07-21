@@ -2,7 +2,7 @@ let input1 = document.getElementsByName("input1")[0];
 let input2 = document.getElementsByName("input2")[0];
 let input3 = document.getElementsByName("input3")[0];
 let arti = document.querySelector(".movies")
-let btn = document.getElementsByClassName("btn")
+let btn = document.querySelector(".btn")
 let modo = null
 let modal = document.getElementById("modal");
 let count = 4
@@ -61,6 +61,7 @@ borrar = (value) => {
 buscarPeli = (a) => {
     return pelis.find(peli => peli.id == a)
 }
+
 
 if (localStorage.getItem('darkMode') === null) {
     localStorage.setItem('darkMode', false)
