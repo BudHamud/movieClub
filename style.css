@@ -51,7 +51,7 @@ main {
 }
 .home input, textarea {
     background-color: black;
-    width: 250px;
+    width: 249px;
     border: solid #DBCBBD 1.5px;
     color: white;
 }
