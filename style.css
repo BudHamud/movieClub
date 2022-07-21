@@ -53,6 +53,7 @@ main {
     background-color: black;
     width: 250px;
     border: solid #DBCBBD 1.5px;
+    color: white;
 }
 article {
     background-color: #F2D7D9;

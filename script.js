@@ -73,22 +73,17 @@ function revisarEstado() {
         modo = true
         document.querySelector("header").classList.add("black")
         document.querySelector("main").classList.add("black")
+        document.querySelector("a").classList.add("black")
         document.querySelector("article").classList.add("black")
         document.querySelector('.btn').innerHTML = `<i class="fa-solid fa-sun"></i>`
         document.querySelector('.btn').classList.add("light")
-        document.querySelector('.btn').classList.remove("dark")
         document.querySelectorAll("button").forEach((a) =>  a.classList.add("light"))
         document.querySelectorAll("button").forEach((a) =>  a.classList.remove("dark"))
     } else {
         modo = false
-        document.querySelector("header").classList.remove("black")
-        document.querySelector("main").classList.remove("black")
-        document.querySelector("article").classList.remove("black")
         document.querySelector('.btn').innerHTML = `<i class="fa-solid fa-moon"></i>`
         document.querySelector('.btn').classList.add("dark")
-        document.querySelector('.btn').classList.remove("light")
-        document.querySelectorAll("button").forEach((a) =>  a.classList.add("hdark"))
-        document.querySelectorAll("button").forEach((a) =>  a.classList.remove("hlight"))
+        document.querySelectorAll("button").forEach((a) =>  a.classList.add("dark"))
     }
 }
 
