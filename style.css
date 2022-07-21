@@ -29,19 +29,25 @@ li {
 .btn {
     border-radius: 20px;
 }
-.dark {
-    background-color: lightblue;
-}
-.light {
-    background-color: #748DA6;
-}
-
 button, .btn {
     border: none; 
 }
 main {
     background-color: #D3CEDF;
     width: 100%;
+}
+.light {
+    background-color: #748DA6;
+}
+.black {
+    background-color: black;
+    color: black;
+}
+.lightp {
+    background-color: #748DA6;
+}
+.blackp {
+    background-color: gray
 }
 .home {
     display: flex;
@@ -87,9 +93,13 @@ button {
 .borrar {
     display: none;
 }
-.black {
-    background-color: black;
-    color: black;
+
+.dark {
+    background-color: lightblue;
+}
+
+.blacka {
+    color: white;
 }
 .modal {
     position: absolute;

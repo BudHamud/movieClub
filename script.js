@@ -71,6 +71,7 @@ btn[0].addEventListener("click", cambiarEstado)
 function revisarEstado() {
     if (localStorage.getItem('darkMode') === "true") {
         modo = true
+        document.querySelectorAll("a").forEach((a) => a.classList.add("blacka"))
         document.querySelector("header").classList.add("black")
         document.querySelector("main").classList.add("black")
         document.querySelector("a").classList.add("black")
@@ -97,10 +98,11 @@ function cambiarEstado() {
         document.querySelector("main").classList.remove("black")
         document.querySelector("article").classList.remove("black")
         document.querySelector('.btn').innerHTML = `<i class="fa-solid fa-moon"></i>`
+        document.querySelectorAll("a").forEach((a) => a.classList.remove("blacka"))
         document.querySelectorAll("button").forEach((a) =>  a.classList.add("dark"))
         document.querySelectorAll("button").forEach((a) =>  a.classList.remove("light"))
-        document.querySelectorAll(".pelis").forEach((a) =>  a.classList.add("dark"))
-        document.querySelectorAll(".pelis").forEach((a) =>  a.classList.remove("light"))
+        document.querySelectorAll(".pelis").forEach((a) =>  a.classList.add("darkp"))
+        document.querySelectorAll(".pelis").forEach((a) =>  a.classList.remove("lightp"))
     } else {
         localStorage.setItem('darkMode', "true")
         document.querySelector("header").classList.add("black")
@@ -108,10 +110,11 @@ function cambiarEstado() {
         document.querySelector("main").classList.add("black")
         document.querySelector("article").classList.add("black")
         document.querySelector('.btn').innerHTML = `<i class="fa-solid fa-sun"></i>`
+        document.querySelectorAll("a").forEach((a) => a.classList.add("blacka"))
         document.querySelectorAll("button").forEach((a) =>  a.classList.add("light"))
         document.querySelectorAll("button").forEach((a) =>  a.classList.remove("dark"))
-        document.querySelectorAll(".pelis").forEach((a) =>  a.classList.add("light"))
-        document.querySelectorAll(".pelis").forEach((a) =>  a.classList.remove("dark"))
+        document.querySelectorAll(".pelis").forEach((a) =>  a.classList.add("lightp"))
+        document.querySelectorAll(".pelis").forEach((a) =>  a.classList.remove("darkp"))
     }
 }
 
