@@ -43,12 +43,7 @@ main {
     background-color: black;
     color: black;
 }
-.lightp {
-    background-color: #748DA6;
-}
-.blackp {
-    background-color: gray
-}
+
 .home {
     display: flex;
     text-align: center;
@@ -101,14 +96,25 @@ button {
 .blacka {
     color: white;
 }
+.lightp {
+    background-color: #0F0F0F;
+    color: white
+}
+.darkp {
+    background-color: lightgray;
+    color: black;
+}
 .modal {
-    position: absolute;
+    position: fixed;
     top: 0; bottom: 0; left: 0; right: 0;
     background-color: lightgray;
-    border: 2px solid;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.modalblack {
+    background-color: black;
+    color: white;
 }
 .modal-container {
     text-align: center;

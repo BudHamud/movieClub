@@ -8,6 +8,8 @@ let modal = document.getElementById("modal");
 let count = 4
 let ini = document.getElementById("ini")
 let reg = document.getElementById("reg")
+let current = null
+let currentp = null
 
 class Movie  {
     constructor(nombre, descripcion, actores, id ) {
@@ -45,8 +47,8 @@ function mostrar() {
     let actores = input3.value
     let id = count
     const div = document.createElement("div")
-    div.className = "pelis peli" + count
-    div.innerHTML= `<img src="img/nodis.jpg" alt="imagen no disponible"><div><h3>${nombre}</h3> <p>${descripcion}</p> <p>${actores}</p><button value="${count}"  onclick="borrar(value)">Borrar</button></div>`
+    div.className = "pelis peli" + count +" "+ currentp
+    div.innerHTML= `<img src="img/nodis.jpg" alt="imagen no disponible"><div><h3>${nombre}</h3> <p>${descripcion}</p> <p>${actores}</p><button value="${count}" class="${current}" onclick="borrar(value)">Borrar</button></div>`
     arti.appendChild(div)
     pelis.push(new Movie(nombre, descripcion, actores, id));
     count++
@@ -67,7 +69,7 @@ if (localStorage.getItem('darkMode') === null) {
     localStorage.setItem('darkMode', false)
 }
 
-btn[0].addEventListener("click", cambiarEstado)
+btn.addEventListener("click", cambiarEstado)
 
 function revisarEstado() {
     if (localStorage.getItem('darkMode') === "true") {
@@ -81,11 +83,15 @@ function revisarEstado() {
         document.querySelector('.btn').classList.add("light")
         document.querySelectorAll("button").forEach((a) =>  a.classList.add("light"))
         document.querySelectorAll("button").forEach((a) =>  a.classList.remove("dark"))
+        current = "light"
+        currentp = "lightp"
     } else {
         modo = false
         document.querySelector('.btn').innerHTML = `<i class="fa-solid fa-moon"></i>`
         document.querySelector('.btn').classList.add("dark")
         document.querySelectorAll("button").forEach((a) =>  a.classList.add("dark"))
+        current = "dark"
+        currentp = "darkp"
     }
 }
 
@@ -99,13 +105,17 @@ function cambiarEstado() {
         document.querySelector("main").classList.remove("black")
         document.querySelector("article").classList.remove("black")
         document.querySelector('.btn').innerHTML = `<i class="fa-solid fa-moon"></i>`
+        document.querySelector("#modal").classList.remove("modalblack")
         document.querySelectorAll("a").forEach((a) => a.classList.remove("blacka"))
         document.querySelectorAll("button").forEach((a) =>  a.classList.add("dark"))
         document.querySelectorAll("button").forEach((a) =>  a.classList.remove("light"))
         document.querySelectorAll(".pelis").forEach((a) =>  a.classList.add("darkp"))
         document.querySelectorAll(".pelis").forEach((a) =>  a.classList.remove("lightp"))
+        current = "dark"
+        currentp = "darkp"
     } else {
         localStorage.setItem('darkMode', "true")
+        document.querySelector("#modal").classList.add("modalblack")
         document.querySelector("header").classList.add("black")
         document.querySelector("a").classList.add("black")
         document.querySelector("main").classList.add("black")
@@ -116,6 +126,8 @@ function cambiarEstado() {
         document.querySelectorAll("button").forEach((a) =>  a.classList.remove("dark"))
         document.querySelectorAll(".pelis").forEach((a) =>  a.classList.add("lightp"))
         document.querySelectorAll(".pelis").forEach((a) =>  a.classList.remove("darkp"))
+        current = "light"
+        currentp = "lightp"
     }
 }
 
